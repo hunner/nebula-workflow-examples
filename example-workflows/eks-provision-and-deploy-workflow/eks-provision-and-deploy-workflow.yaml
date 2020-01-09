@@ -102,6 +102,12 @@ steps:
         url: !Output [provision-eks-cluster, Endpoint]
         cadata: !Output [provision-eks-cluster, CAData]
         token: !Output [pull-kubernetes-token, EKS_TOKEN]
+  - name: notify-via-slack
+    image: projectnebula/slack
+    spec: 
+      apitoken: !Secret slack_token
+      channel: !Parameters slack_channel
+      message: !Parameters slack_message
 
       
 
