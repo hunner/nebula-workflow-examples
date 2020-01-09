@@ -104,6 +104,7 @@ steps:
         token: !Output [pull-kubernetes-token, EKS_TOKEN]
   - name: notify-via-slack
     image: projectnebula/slack-notification
+    dependsOn: deploy-with-kubectl
     spec: 
       apitoken: !Secret slack_token
       channel: !Parameter slack_channel
