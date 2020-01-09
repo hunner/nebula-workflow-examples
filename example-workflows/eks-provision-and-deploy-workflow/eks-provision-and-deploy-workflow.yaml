@@ -106,8 +106,8 @@ steps:
     image: projectnebula/slack
     spec: 
       apitoken: !Secret slack_token
-      channel: !Parameters slack_channel
-      message: !Parameters slack_message
+      channel: !Parameter slack_channel
+      message: !Parameter slack_message
 
       
 
