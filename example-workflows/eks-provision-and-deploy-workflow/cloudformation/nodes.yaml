@@ -464,6 +464,12 @@ Resources:
         - Key: !Sub kubernetes.io/cluster/${ClusterName}
           PropagateAtLaunch: "true"
           Value: owned
+        - Key: lifetime
+          Value: 1d
+        - Key: organization
+          Value: engineering
+        - Key: portfolio
+          Value: nebula
     UpdatePolicy:
       AutoScalingRollingUpdate:
         MaxBatchSize: "1"
